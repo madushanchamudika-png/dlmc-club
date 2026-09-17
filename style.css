@@ -1,3 +1,4 @@
+
 * {
     margin: 0;
     padding: 0;
@@ -10,10 +11,9 @@ html {
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background: #07090d;
+    background: #070707;
     color: #ffffff;
 }
-
 
 /* ============================= */
 /* NAVBAR */
@@ -23,8 +23,8 @@ header {
     position: sticky;
     top: 0;
     z-index: 1000;
-    background: rgba(7, 9, 13, 0.95);
-    border-bottom: 1px solid #20242c;
+    background: rgba(7, 7, 7, 0.95);
+    border-bottom: 1px solid #301010;
     backdrop-filter: blur(10px);
 }
 
@@ -45,7 +45,7 @@ header {
 }
 
 .logo span {
-    color: #00e5ff;
+    color: #ff2020;
 }
 
 .nav-links {
@@ -61,7 +61,7 @@ header {
 }
 
 .nav-links a:hover {
-    color: #00e5ff;
+    color: #ff2020;
 }
 
 .store-btn,
@@ -76,17 +76,17 @@ header {
 }
 
 .store-btn {
-    background: #00e5ff;
-    color: #000;
+    background: #e60000;
+    color: #ffffff;
     padding: 12px 18px;
     border-radius: 7px;
 }
 
 .store-btn:hover {
+    background: #ff2020;
     transform: translateY(-2px);
-    box-shadow: 0 0 25px rgba(0, 229, 255, 0.4);
+    box-shadow: 0 0 25px rgba(255, 0, 0, 0.4);
 }
-
 
 /* ============================= */
 /* HERO */
@@ -104,7 +104,7 @@ header {
     padding: 80px 20px;
 
     background:
-        radial-gradient(circle at center, #102b35 0%, #07090d 55%);
+        radial-gradient(circle at center, #350909 0%, #070707 55%);
 }
 
 .hero-content {
@@ -118,10 +118,10 @@ header {
 
     margin-bottom: 25px;
 
-    border: 1px solid #00e5ff;
+    border: 1px solid #ff2020;
     border-radius: 30px;
 
-    color: #00e5ff;
+    color: #ff2020;
 
     font-size: 13px;
     font-weight: bold;
@@ -131,7 +131,7 @@ header {
     font-size: clamp(55px, 10vw, 110px);
     line-height: 1;
 
-    font-weight: 1000;
+    font-weight: 900;
 
     letter-spacing: -5px;
 
@@ -139,7 +139,7 @@ header {
 }
 
 .hero h1 span {
-    color: #00e5ff;
+    color: #ff2020;
 }
 
 .hero p {
@@ -147,7 +147,6 @@ header {
     font-size: 18px;
     line-height: 1.7;
 }
-
 
 /* ============================= */
 /* SERVER IP */
@@ -160,11 +159,13 @@ header {
 
     padding: 18px;
 
-    background: #0d1118;
+    background: #0d0808;
 
-    border: 1px solid #242b35;
+    border: 1px solid #3b1a1a;
 
     border-radius: 10px;
+
+    box-shadow: 0 0 25px rgba(255, 0, 0, 0.08);
 }
 
 .server-box span {
@@ -190,15 +191,20 @@ header {
 .server-box button {
     padding: 9px 13px;
 
-    border: 1px solid #00e5ff;
+    border: 1px solid #ff2020;
 
     background: transparent;
 
-    color: #00e5ff;
+    color: #ff2020;
 
     border-radius: 5px;
 
     cursor: pointer;
+}
+
+.server-box button:hover {
+    background: #ff2020;
+    color: #ffffff;
 }
 
 .main-btn {
@@ -206,18 +212,18 @@ header {
 
     padding: 15px 30px;
 
-    background: #00e5ff;
+    background: #e60000;
 
-    color: #000;
+    color: #ffffff;
 
     border-radius: 7px;
 }
 
 .main-btn:hover {
+    background: #ff2020;
     transform: translateY(-3px);
-    box-shadow: 0 0 30px rgba(0, 229, 255, 0.4);
+    box-shadow: 0 0 30px rgba(255, 0, 0, 0.4);
 }
-
 
 /* ============================= */
 /* SECTIONS */
@@ -234,7 +240,7 @@ header {
 .section.dark {
     max-width: none;
 
-    background: #0b0e13;
+    background: #0b0707;
 }
 
 .section-title {
@@ -244,7 +250,7 @@ header {
 }
 
 .section-title span {
-    color: #00e5ff;
+    color: #ff2020;
 
     font-size: 13px;
 
@@ -263,7 +269,6 @@ header {
     color: #888;
 }
 
-
 /* ============================= */
 /* RANK GRID */
 /* ============================= */
@@ -281,9 +286,9 @@ header {
 
     text-align: center;
 
-    background: #0d1118;
+    background: #0d0808;
 
-    border: 1px solid #252b34;
+    border: 1px solid #351919;
 
     border-radius: 12px;
 
@@ -292,12 +297,16 @@ header {
 
 .rank-card:hover {
     transform: translateY(-8px);
+
+    border-color: #ff2020;
+
+    box-shadow: 0 10px 30px rgba(255, 0, 0, 0.12);
 }
 
 .rank-name {
     font-size: 23px;
 
-    font-weight: 1000;
+    font-weight: 900;
 
     letter-spacing: 1px;
 
@@ -329,18 +338,20 @@ header {
 
     border-radius: 6px;
 
-    background: #171c24;
+    background: #171010;
 
     color: white;
 
-    border: 1px solid #303742;
+    border: 1px solid #402020;
 }
 
 .rank-card button:hover {
-    background: #00e5ff;
-    color: #000;
-}
+    background: #e60000;
 
+    color: #ffffff;
+
+    border-color: #ff2020;
+}
 
 /* ============================= */
 /* RANK COLORS */
@@ -366,7 +377,6 @@ header {
     color: #ff5555;
 }
 
-
 /* ============================= */
 /* STEPS */
 /* ============================= */
@@ -388,15 +398,15 @@ header {
 
     padding: 25px;
 
-    background: #11151c;
+    background: #110909;
 
-    border: 1px solid #252b34;
+    border: 1px solid #351919;
 
     border-radius: 10px;
 }
 
 .step strong {
-    color: #00e5ff;
+    color: #ff2020;
 
     font-size: 30px;
 }
@@ -413,7 +423,6 @@ header {
     line-height: 1.5;
 }
 
-
 /* ============================= */
 /* FAQ */
 /* ============================= */
@@ -425,15 +434,23 @@ header {
 }
 
 details {
-    background: #0d1118;
+    background: #0d0808;
 
-    border: 1px solid #252b34;
+    border: 1px solid #351919;
 
     border-radius: 8px;
 
     padding: 20px;
 
     margin-bottom: 12px;
+}
+
+details:hover {
+    border-color: #632020;
+}
+
+details[open] {
+    border-color: #ff2020;
 }
 
 summary {
@@ -450,7 +467,6 @@ details p {
     line-height: 1.6;
 }
 
-
 /* ============================= */
 /* MODAL */
 /* ============================= */
@@ -462,7 +478,10 @@ details p {
 
     z-index: 2000;
 
-    inset: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
 
     background: rgba(0, 0, 0, 0.82);
 
@@ -474,7 +493,6 @@ details p {
 
     overflow-y: auto;
 }
-
 
 /* ============================= */
 /* COMPACT REQUEST POPUP */
@@ -491,9 +509,9 @@ details p {
 
     overflow-y: auto;
 
-    background: #0d1118;
+    background: #0d0808;
 
-    border: 1px solid #303742;
+    border: 1px solid #402020;
 
     border-radius: 12px;
 
@@ -501,18 +519,16 @@ details p {
 
     box-shadow:
         0 0 40px rgba(0, 0, 0, 0.8),
-        0 0 20px rgba(0, 229, 255, 0.05);
+        0 0 20px rgba(255, 0, 0, 0.08);
 
     animation: modalOpen 0.2s ease;
 }
-
 
 /* ============================= */
 /* POPUP ANIMATION */
 /* ============================= */
 
 @keyframes modalOpen {
-
     from {
         opacity: 0;
         transform: scale(0.95);
@@ -522,9 +538,7 @@ details p {
         opacity: 1;
         transform: scale(1);
     }
-
 }
-
 
 /* ============================= */
 /* MODAL TITLE */
@@ -539,9 +553,8 @@ details p {
 }
 
 .modal-content h2 span {
-    color: #00e5ff;
+    color: #ff2020;
 }
-
 
 /* ============================= */
 /* CLOSE BUTTON */
@@ -582,9 +595,8 @@ details p {
 .close:hover {
     color: white;
 
-    background: #1b2028;
+    background: #1b0d0d;
 }
-
 
 /* ============================= */
 /* SELECTED RANK */
@@ -601,15 +613,15 @@ details p {
 
     margin-bottom: 13px;
 
-    background: #151a22;
+    background: #150909;
 
     border-radius: 7px;
 
-    border: 1px solid #242b35;
+    border: 1px solid #402020;
 }
 
 .selected-rank strong {
-    color: #00e5ff;
+    color: #ff2020;
 
     font-size: 17px;
 }
@@ -620,15 +632,14 @@ details p {
     font-size: 14px;
 }
 
-
 /* ============================= */
 /* BANK */
 /* ============================= */
 
 .bank-box {
-    background: #10151c;
+    background: #100909;
 
-    border: 1px solid #27303b;
+    border: 1px solid #3d2020;
 
     border-radius: 8px;
 
@@ -660,7 +671,7 @@ details p {
 
     padding: 6px 0;
 
-    border-bottom: 1px solid #202630;
+    border-bottom: 1px solid #302020;
 
     gap: 12px;
 
@@ -681,7 +692,6 @@ details p {
     word-break: break-word;
 }
 
-
 /* ============================= */
 /* FORM */
 /* ============================= */
@@ -701,9 +711,9 @@ form input {
 
     padding: 9px;
 
-    background: #080b10;
+    background: #080707;
 
-    border: 1px solid #303742;
+    border: 1px solid #303030;
 
     border-radius: 6px;
 
@@ -715,15 +725,14 @@ form input {
 }
 
 form input:focus {
-    border-color: #00e5ff;
+    border-color: #ff2020;
 
-    box-shadow: 0 0 8px rgba(0, 229, 255, 0.1);
+    box-shadow: 0 0 8px rgba(255, 0, 0, 0.1);
 }
 
 input[type="file"] {
     padding: 7px;
 }
-
 
 /* ============================= */
 /* SEND BUTTON */
@@ -736,9 +745,9 @@ input[type="file"] {
 
     padding: 11px;
 
-    background: #00e5ff;
+    background: #e60000;
 
-    color: #000;
+    color: #ffffff;
 
     border-radius: 7px;
 
@@ -746,11 +755,12 @@ input[type="file"] {
 }
 
 .send-btn:hover {
-    box-shadow: 0 0 25px rgba(0, 229, 255, 0.4);
+    background: #ff2020;
+
+    box-shadow: 0 0 25px rgba(255, 0, 0, 0.4);
 
     transform: translateY(-1px);
 }
-
 
 /* ============================= */
 /* NOTICE */
@@ -766,7 +776,6 @@ input[type="file"] {
     text-align: center;
 }
 
-
 /* ============================= */
 /* FOOTER */
 /* ============================= */
@@ -776,9 +785,9 @@ footer {
 
     text-align: center;
 
-    background: #05070a;
+    background: #050505;
 
-    border-top: 1px solid #20242c;
+    border-top: 1px solid #351515;
 }
 
 footer p {
@@ -788,7 +797,6 @@ footer p {
 
     font-size: 13px;
 }
-
 
 /* ============================= */
 /* TABLET */
@@ -809,7 +817,6 @@ footer p {
     }
 
 }
-
 
 /* ============================= */
 /* MOBILE */
@@ -834,9 +841,6 @@ footer p {
 
         margin-bottom: 12px;
     }
-
-
-    /* MOBILE MODAL */
 
     .modal {
         padding: 8px;
