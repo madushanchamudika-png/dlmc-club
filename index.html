@@ -1,1264 +1,383 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+```html
+<!DOCTYPE html>  
+  
+<html lang="en">  
+  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+  
+    <title>DLMC CLUB | Rank Store</title>  
+    <link rel="icon" type="image/png" sizes="32x32" href="dlmc-favicon.png">  
+  
+    <title>DLMC CLUB</title>  
+  
+    <link rel="stylesheet" href="style.css">  
+</head>  
+  
+<body>  
+  
+<!-- ============================= -->  
+<!-- NAVBAR -->  
+<!-- ============================= -->  
+  
+<header>  
+    <nav class="navbar">  
+  
+        <!-- DLMC CLUB LOGO -->  
+        <a href="#home" class="logo">  
+            <img src="/dlmc-favicon.png" alt="DLMC CLUB Logo">  
+            <span><b>DLMC</b> CLUB</span>  
+        </a>  
+  
+        <div class="nav-links">  
+            <a href="#home">Home</a>  
+            <a href="#ranks">Ranks</a>  
+            <a href="#how">How It Works</a>  
+            <a href="#faq">FAQ</a>  
+        </div>  
+  
+        <a href="#ranks" class="store-btn">  
+            REQUEST RANK  
+        </a>  
+  
+    </nav>  
+</header>  
+  
+<!-- HERO -->  
+  
+<section id="home" class="hero">  
+    <div class="hero-content">  
+        <div class="badge">🇱🇰 MADE IN SRI LANKA</div>  
+        <h1>DLMC <span>CLUB</span></h1>  
+        <p>Upgrade your Minecraft experience. Choose your rank and send a purchase request.</p>  
+        <div class="server-box">  
+            <span>SERVER IP</span>  
+            <strong id="serverIP">play.dlmc.club</strong>  
+            <button onclick="copyIP()">COPY IP</button>  
+        </div>  
+        <a href="#ranks" class="main-btn">VIEW RANKS</a>  
+    </div>  
+</section>  
+  
+<!-- RANKS -->  
+  
+<section id="ranks" class="section">  
+    <div class="section-title">  
+        <span>STORE</span>  
+        <h2>CHOOSE YOUR RANK</h2>  
+        <p>Pay directly to our bank account and send us your payment request.</p>  
+    </div>  
+ 
+    <div class="rank-grid">  
+ 
+        <div class="rank-card squire">  
+            <div class="rank-name">SQUIRE</div>  
+            <div class="price">Rs. 75</div>  
+            <p>Basic supporter rank</p>  
+            <button onclick="openRequest('SQUIRE', 75)">REQUEST RANK</button>  
+        </div>  
+ 
+        <div class="rank-card knight">  
+            <div class="rank-name">KNIGHT</div>  
+            <div class="price">Rs. 200</div>  
+            <p>Knight supporter rank</p>  
+            <button onclick="openRequest('KNIGHT', 200)">REQUEST RANK</button>  
+        </div>  
+ 
+        <div class="rank-card warrior">  
+            <div class="rank-name">WARRIOR</div>  
+            <div class="price">Rs. 300</div>  
+            <p>Warrior supporter rank</p>  
+            <button onclick="openRequest('WARRIOR', 300)">REQUEST RANK</button>  
+        </div>  
+ 
+        <div class="rank-card legend">  
+            <div class="rank-name">LEGEND</div>  
+            <div class="price">Rs. 500</div>  
+            <p>Premium legend rank</p>  
+            <button onclick="openRequest('LEGEND', 500)">REQUEST RANK</button>  
+        </div>  
+ 
+        <div class="rank-card overload">  
+            <div class="rank-name">OVERLOAD</div>  
+            <div class="price">Rs. 750</div>  
+            <p>Ultimate supporter rank</p>  
+            <button onclick="openRequest('OVERLOAD', 750)">REQUEST RANK</button>  
+        </div>  
+ 
+    </div>  
+</section>  
+  
+<!-- HOW IT WORKS -->  
+  
+<section id="how" class="section dark">  
+    <div class="section-title">  
+        <span>PROCESS</span>  
+        <h2>HOW IT WORKS</h2>  
+    </div>  
+ 
+    <div class="steps">  
+        <div class="step"> 
+            <strong>01</strong> 
+            <h3>Choose Rank</h3> 
+            <p>Select the rank you want.</p> 
+        </div>  
+ 
+        <div class="step"> 
+            <strong>02</strong> 
+            <h3>Make Payment</h3> 
+            <p>Transfer the exact amount to our bank account.</p> 
+        </div>  
+ 
+        <div class="step"> 
+            <strong>03</strong> 
+            <h3>Send Request</h3> 
+            <p>Submit your Minecraft username and payment details.</p> 
+        </div>  
+ 
+        <div class="step"> 
+            <strong>04</strong> 
+            <h3>Receive Rank</h3> 
+            <p>We verify your payment and add your rank.</p> 
+        </div>  
+    </div>  
+</section>  
+  
+<!-- FAQ -->  
+  
+<section id="faq" class="section">  
+    <div class="section-title">  
+        <span>HELP</span>  
+        <h2>FAQ</h2>  
+    </div>  
+ 
+    <div class="faq">  
+        <details>  
+            <summary>How long does it take?</summary>  
+            <p>After we verify your payment, your rank will be added manually.</p>  
+        </details>  
+ 
+        <details>  
+            <summary>Do I need a Minecraft username?</summary>  
+            <p>Yes. Enter the exact Minecraft username that should receive the rank.</p>  
+        </details>  
+ 
+        <details>  
+            <summary>Can I request a refund?</summary>  
+            <p>Contact the DLMC CLUB staff before making another payment.</p>  
+        </details>  
+    </div>  
+</section>  
+ 
+ 
+<!-- ============================= --> 
+<!-- CONTACT US --> 
+<!-- ============================= --> 
+ 
+<section class="contact-section" id="contact"> 
+ 
+    <div class="contact-container"> 
+ 
+        <div class="contact-heading"> 
+ 
+            <span>GET IN TOUCH</span> 
+ 
+            <h2> 
+                Contact <strong>Us</strong> 
+            </h2> 
+ 
+            <p> 
+                Have a question or need help? 
+                Contact us using email or phone. 
+            </p> 
+ 
+        </div> 
+ 
+        <div class="contact-cards"> 
+ 
+            <!-- LAKSHAN EMAIL --> 
+            <a href="mailto:lakshanyt.lk@gmail.com" class="contact-card"> 
+                <div class="contact-icon">✉</div> 
+ 
+                <div class="contact-info"> 
+                    <h3>Email</h3> 
+                    <p>Lakshan</p> 
+                    <span>lakshanyt.lk@gmail.com</span> 
+                </div> 
+            </a> 
+ 
+ 
+            <!-- LAKSHAN PHONE --> 
+            <a href="tel:0742420362" class="contact-card"> 
+                <div class="contact-icon">☎</div> 
+ 
+                <div class="contact-info"> 
+                    <h3>Phone</h3> 
+                    <p>Lakshan</p> 
+                    <span>0742420362</span> 
+                </div> 
+            </a> 
+ 
+ 
+            <!-- LUNA EMAIL --> 
+            <a href="mailto:chamudikabandara19@gmail.com" class="contact-card"> 
+                <div class="contact-icon">✉</div> 
+ 
+                <div class="contact-info"> 
+                    <h3>Email</h3> 
+                    <p>LuNa</p> 
+                    <span>chamudikabandara19@gmail.com</span> 
+                </div> 
+            </a> 
+ 
+ 
+            <!-- LUNA PHONE --> 
+            <a href="tel:0762596186" class="contact-card"> 
+                <div class="contact-icon">☎</div> 
+ 
+                <div class="contact-info"> 
+                    <h3>Phone</h3> 
+                    <p>LuNa</p> 
+                    <span>0762596186</span> 
+                </div> 
+            </a> 
+ 
+        </div> 
+ 
+    </div> 
+ 
+</section> 
+
+
+<!-- ============================= -->
+<!-- DISCORD SUPPORT -->
+<!-- ============================= -->
+
+<section class="discord-section">
+
+    <div class="discord-container">
+
+        <div class="discord-icon">
+            💬
+        </div>
+
+        <div class="discord-content">
+            <span>COMMUNITY SUPPORT</span>
+            <h2>Discord Support</h2>
+            <p>
+                Need help or want to join our community?
+                Join the DLMC CLUB Discord server.
+            </p>
+        </div>
+
+        <a href="https://discord.gg/nxfDGTXqHm" target="_blank" class="discord-btn">
+            JOIN DISCORD
+        </a>
+
+    </div>
+
+</section>
+ 
+ 
+<!-- REQUEST MODAL -->  
+  
+<div id="requestModal" class="modal">  
+    <div class="modal-content">  
+ 
+        <button class="close" onclick="closeRequest()">×</button>  
+ 
+        <h2>REQUEST <span>RANK</span></h2>  
+ 
+        <div class="selected-rank">  
+            <strong id="selectedRank">SQUIRE</strong>  
+            <span id="selectedPrice">Rs. 75</span>  
+        </div>  
+ 
+        <div class="bank-box">  
+            <h3>💳 BANK PAYMENT</h3>  
+            <p>Please transfer the exact amount to our bank account.</p>  
+ 
+            <div class="bank-detail"> 
+                <span>Bank</span> 
+                <strong>BOC</strong> 
+            </div>  
+ 
+            <div class="bank-detail"> 
+                <span>Account Name</span> 
+                <strong>A M C M Bandara</strong> 
+            </div>  
+ 
+            <div class="bank-detail"> 
+                <span>ACCOUNT NUMBER</span> 
+                <strong>95929618</strong> 
+            </div>  
+ 
+            <div class="bank-detail"> 
+                <span>Branch</span> 
+                <strong>Ankumbura</strong> 
+            </div>  
+        </div>  
+ 
+        <form id="requestForm">  
+ 
+            <label>Minecraft Username</label>  
+            <input  
+                type="text"  
+                id="minecraftUsername"  
+                placeholder="Example: Luna"  
+                required 
+            >  
+ 
+            <label>Transfer Reference</label>  
+            <input  
+                type="text"  
+                id="transferReference"  
+                placeholder="Bank transfer reference"  
+                required 
+            >  
+ 
+            <label>Payment Screenshot</label>  
+            <input  
+                type="file"  
+                id="paymentScreenshot"  
+                accept="image/*"  
+                required 
+            >  
+ 
+            <button type="submit" class="send-btn"> 
+                SEND REQUEST 
+            </button>  
+ 
+        </form>  
+ 
+        <p class="notice"> 
+            ⚠️ Your rank will be added after payment verification. 
+        </p>  
+ 
+    </div>  
+</div>  
+  
+<!-- FOOTER -->  
+  
+<footer>  
+ 
+    <a href="#home" class="logo">  
+        <img  
+            src="dlmc-favicon.png"  
+            alt="DLMC CLUB Logo"  
+            style="width:45px;height:45px;display:block;object-fit:contain;" 
+        >  
+        <span><b>DLMC</b> CLUB</span>  
+    </a>  
+ 
+    <p>Made in Sri Lanka 🇱🇰</p>  
+    <p>© 2026 DLMC CLUB. All rights reserved.</p>  
+ 
+</footer>  
+  
+<script src="script.js"></script>  
+</body>  
+</html>
+```
 
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    background: #070707;
-    color: #ffffff;
-}
-
-/* ============================= */
-/* NAVBAR */
-/* ============================= */
-
-header {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    background: rgba(7, 7, 7, 0.95);
-    border-bottom: 1px solid #301010;
-    backdrop-filter: blur(10px);
-}
-
-.navbar {
-    max-width: 1200px;
-    margin: auto;
-    padding: 18px 25px;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-/* ============================= */
-/* LOGO */
-/* ============================= */
-
-.logo {
-    display: flex !important;
-    align-items: center;
-    gap: 10px;
-
-    text-decoration: none;
-    color: #ffffff;
-
-    font-size: 24px;
-    font-weight: 900;
-    letter-spacing: 2px;
-
-    white-space: nowrap;
-}
-
-
-/* LOGO IMAGE */
-
-.logo img {
-    width: 45px !important;
-    height: 45px !important;
-
-    min-width: 45px !important;
-    min-height: 45px !important;
-
-    max-width: 45px !important;
-    max-height: 45px !important;
-
-    display: block !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-
-    object-fit: contain !important;
-
-    flex-shrink: 0 !important;
-
-    border: none !important;
-}
-
-/* LOGO TEXT */
-
-.logo span {
-    color: #ffffff;
-}
-
-.logo span b {
-    color: #ff2020;
-    font-weight: 900;
-}
-
-/* ============================= */
-/* NAVIGATION */
-/* ============================= */
-
-.nav-links {
-    display: flex;
-    gap: 30px;
-}
-
-.nav-links a {
-    color: #aaa;
-    text-decoration: none;
-    font-weight: bold;
-    transition: 0.3s;
-}
-
-.nav-links a:hover {
-    color: #ff2020;
-}
-
-/* ============================= */
-/* BUTTONS */
-/* ============================= */
-
-.store-btn,
-.main-btn,
-.rank-card button,
-.send-btn {
-    border: none;
-    cursor: pointer;
-    text-decoration: none;
-    font-weight: 900;
-    transition: 0.3s;
-}
-
-.store-btn {
-    background: #e60000;
-    color: #ffffff;
-    padding: 12px 18px;
-    border-radius: 7px;
-}
-
-.store-btn:hover {
-    background: #ff2020;
-    transform: translateY(-2px);
-    box-shadow: 0 0 25px rgba(255, 0, 0, 0.4);
-}
-
-/* ============================= */
-/* HERO */
-/* ============================= */
-
-.hero {
-    min-height: 650px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    text-align: center;
-
-    padding: 80px 20px;
-
-    background:
-        linear-gradient(
-            rgba(0, 0, 0, 0.45),
-            rgba(0, 0, 0, 0.70)
-        ),
-        url("background.png") center center / cover no-repeat;
-
-    position: relative;
-}
-
-/* DARK OVERLAY */
-
-.hero::before {
-    content: "";
-    position: absolute;
-
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-
-    background:
-        radial-gradient(
-            circle at center,
-            rgba(255, 0, 0, 0.08),
-            transparent 55%
-        );
-
-    pointer-events: none;
-}
-
-.hero-content {
-    max-width: 800px;
-    position: relative;
-    z-index: 1;
-}
-
-.badge {
-    display: inline-block;
-
-    padding: 9px 15px;
-
-    margin-bottom: 25px;
-
-    border: 1px solid #ff2020;
-    border-radius: 30px;
-
-    color: #ff2020;
-
-    font-size: 13px;
-    font-weight: bold;
-}
-
-.hero h1 {
-    font-size: clamp(55px, 10vw, 110px);
-    line-height: 1;
-
-    font-weight: 900;
-
-    letter-spacing: -5px;
-
-    margin-bottom: 25px;
-}
-
-.hero h1 span {
-    color: #ff2020;
-}
-
-.hero p {
-    color: #aaa;
-    font-size: 18px;
-    line-height: 1.7;
-}
-
-/* ============================= */
-/* SERVER IP */
-/* ============================= */
-
-.server-box {
-    margin: 35px auto;
-
-    max-width: 500px;
-
-    padding: 18px;
-
-    background: #0d0808;
-
-    border: 1px solid #3b1a1a;
-
-    border-radius: 10px;
-
-    box-shadow: 0 0 25px rgba(255, 0, 0, 0.08);
-}
-
-.server-box span {
-    display: block;
-
-    color: #777;
-
-    font-size: 11px;
-
-    letter-spacing: 2px;
-
-    margin-bottom: 7px;
-}
-
-.server-box strong {
-    display: inline-block;
-
-    font-size: 18px;
-
-    margin-right: 15px;
-}
-
-.server-box button {
-    padding: 9px 13px;
-
-    border: 1px solid #ff2020;
-
-    background: transparent;
-
-    color: #ff2020;
-
-    border-radius: 5px;
-
-    cursor: pointer;
-}
-
-.server-box button:hover {
-    background: #ff2020;
-    color: #ffffff;
-}
-
-.main-btn {
-    display: inline-block;
-
-    padding: 15px 30px;
-
-    background: #e60000;
-
-    color: #ffffff;
-
-    border-radius: 7px;
-}
-
-.main-btn:hover {
-    background: #ff2020;
-
-    transform: translateY(-3px);
-
-    box-shadow: 0 0 30px rgba(255, 0, 0, 0.4);
-}
-
-/* ============================= */
-/* SECTIONS */
-/* ============================= */
-
-.section {
-    max-width: 1200px;
-
-    margin: auto;
-
-    padding: 100px 25px;
-}
-
-.section.dark {
-    max-width: none;
-
-    background: #0b0707;
-}
-
-.section-title {
-    text-align: center;
-
-    margin-bottom: 55px;
-}
-
-.section-title span {
-    color: #ff2020;
-
-    font-size: 13px;
-
-    font-weight: bold;
-
-    letter-spacing: 3px;
-}
-
-.section-title h2 {
-    font-size: 40px;
-
-    margin: 10px 0;
-}
-
-.section-title p {
-    color: #888;
-}
-
-/* ============================= */
-/* RANK GRID */
-/* ============================= */
-
-.rank-grid {
-    display: grid;
-
-    grid-template-columns: repeat(5, 1fr);
-
-    gap: 18px;
-}
-
-.rank-card {
-    padding: 30px 20px;
-
-    text-align: center;
-
-    background: #0d0808;
-
-    border: 1px solid #351919;
-
-    border-radius: 12px;
-
-    transition: 0.3s;
-}
-
-.rank-card:hover {
-    transform: translateY(-8px);
-
-    border-color: #ff2020;
-
-    box-shadow: 0 10px 30px rgba(255, 0, 0, 0.12);
-}
-
-.rank-name {
-    font-size: 23px;
-
-    font-weight: 900;
-
-    letter-spacing: 1px;
-
-    margin-bottom: 15px;
-}
-
-.price {
-    font-size: 28px;
-
-    font-weight: 900;
-
-    margin-bottom: 12px;
-}
-
-.rank-card p {
-    color: #888;
-
-    font-size: 14px;
-
-    min-height: 40px;
-
-    margin-bottom: 20px;
-}
-
-.rank-card button {
-    width: 100%;
-
-    padding: 12px;
-
-    border-radius: 6px;
-
-    background: #171010;
-
-    color: white;
-
-    border: 1px solid #402020;
-}
-
-.rank-card button:hover {
-    background: #e60000;
-
-    color: #ffffff;
-
-    border-color: #ff2020;
-}
-
-/* ============================= */
-/* RANK COLORS */
-/* ============================= */
-
-.squire .rank-name {
-    color: #55ff55;
-}
-
-.knight .rank-name {
-    color: #55ffff;
-}
-
-.warrior .rank-name {
-    color: #ffff55;
-}
-
-.legend .rank-name {
-    color: #ff55ff;
-}
-
-.overload .rank-name {
-    color: #ff5555;
-}
-
-/* ============================= */
-/* STEPS */
-/* ============================= */
-
-.steps {
-    max-width: 1100px;
-
-    margin: auto;
-
-    display: grid;
-
-    grid-template-columns: repeat(4, 1fr);
-
-    gap: 20px;
-}
-
-.step {
-    text-align: center;
-
-    padding: 25px;
-
-    background: #110909;
-
-    border: 1px solid #351919;
-
-    border-radius: 10px;
-}
-
-.step strong {
-    color: #ff2020;
-
-    font-size: 30px;
-}
-
-.step h3 {
-    margin: 15px 0 10px;
-}
-
-.step p {
-    color: #888;
-
-    font-size: 14px;
-
-    line-height: 1.5;
-}
-
-/* ============================= */
-/* FAQ */
-/* ============================= */
-
-.faq {
-    max-width: 800px;
-
-    margin: auto;
-}
-
-details {
-    background: #0d0808;
-
-    border: 1px solid #351919;
-
-    border-radius: 8px;
-
-    padding: 20px;
-
-    margin-bottom: 12px;
-}
-
-details:hover {
-    border-color: #632020;
-}
-
-details[open] {
-    border-color: #ff2020;
-}
-
-summary {
-    cursor: pointer;
-
-    font-weight: bold;
-}
-
-details p {
-    color: #999;
-
-    margin-top: 15px;
-
-    line-height: 1.6;
-}
-
-
-/* ============================= */
-/* CONTACT US */
-/* ============================= */
-
-.contact-section {
-    padding: 90px 25px;
-    background:
-        radial-gradient(
-            circle at top,
-            rgba(255, 0, 0, 0.10),
-            transparent 45%
-        ),
-        #070707;
-    border-top: 1px solid #351515;
-}
-
-.contact-container {
-    max-width: 1100px;
-    margin: 0 auto;
-}
-
-.contact-heading {
-    text-align: center;
-    margin-bottom: 45px;
-}
-
-.contact-heading span {
-    display: block;
-    color: #ff2020;
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: 4px;
-    margin-bottom: 10px;
-}
-
-.contact-heading h2 {
-    font-size: 42px;
-    color: #ffffff;
-    margin-bottom: 12px;
-}
-
-.contact-heading h2 strong {
-    color: #ff2020;
-}
-
-.contact-heading p {
-    color: #888;
-    font-size: 15px;
-    line-height: 1.7;
-    max-width: 600px;
-    margin: auto;
-}
-
-.contact-cards {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-}
-
-.contact-card {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    padding: 25px;
-    background: #0d0808;
-    border: 1px solid #351919;
-    border-radius: 12px;
-    text-decoration: none;
-    color: #ffffff;
-    transition: all 0.3s ease;
-}
-
-.contact-card:hover {
-    transform: translateY(-6px);
-    border-color: #ff2020;
-    box-shadow:
-        0 10px 35px rgba(255, 0, 0, 0.12),
-        0 0 20px rgba(255, 0, 0, 0.08);
-}
-
-.contact-icon {
-    min-width: 58px;
-    width: 58px;
-    height: 58px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 12px;
-    background: rgba(255, 0, 0, 0.08);
-    border: 1px solid rgba(255, 32, 32, 0.5);
-    color: #ff2020;
-    font-size: 25px;
-    transition: 0.3s ease;
-}
-
-.contact-card:hover .contact-icon {
-    background: #ff2020;
-    color: #000000;
-}
-
-.contact-info h3 {
-    font-size: 17px;
-    margin-bottom: 5px;
-}
-
-.contact-info p {
-    color: #ff2020;
-    font-size: 15px;
-    font-weight: 700;
-    margin-bottom: 5px;
-}
-
-.contact-info span {
-    color: #999;
-    font-size: 14px;
-    word-break: break-word;
-}
-
-.contact-card:focus-visible {
-    outline: 3px solid #ff2020;
-    outline-offset: 4px;
-    border-color: #ff2020;
-    box-shadow:
-        0 0 0 4px rgba(255, 0, 0, 0.15),
-        0 10px 35px rgba(255, 0, 0, 0.12);
-    transform: translateY(-4px);
-}
-
-.contact-card:focus-visible .contact-icon {
-    background: #ff2020;
-    color: #000000;
-}
-
-.contact-card:focus:not(:focus-visible) {
-    outline: none;
-}
-
-/* ============================= */
-/* MODAL */
-/* ============================= */
-
-.modal {
-    display: none;
-
-    position: fixed;
-
-    z-index: 2000;
-
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-
-    background: rgba(0, 0, 0, 0.82);
-
-    align-items: center;
-
-    justify-content: center;
-
-    padding: 15px;
-
-    overflow-y: auto;
-}
-
-/* ============================= */
-/* REQUEST POPUP */
-/* ============================= */
-
-.modal-content {
-    position: relative;
-
-    width: 100%;
-
-    max-width: 360px;
-
-    max-height: 90vh;
-
-    overflow-y: auto;
-
-    background: #0d0808;
-
-    border: 1px solid #402020;
-
-    border-radius: 12px;
-
-    padding: 20px;
-
-    box-shadow:
-        0 0 40px rgba(0, 0, 0, 0.8),
-        0 0 20px rgba(255, 0, 0, 0.08);
-
-    animation: modalOpen 0.2s ease;
-}
-
-/* ============================= */
-/* POPUP ANIMATION */
-/* ============================= */
-
-@keyframes modalOpen {
-    from {
-        opacity: 0;
-        transform: scale(0.95);
-    }
-
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-
-/* ============================= */
-/* MODAL TITLE */
-/* ============================= */
-
-.modal-content h2 {
-    font-size: 22px;
-
-    margin-bottom: 15px;
-
-    padding-right: 25px;
-}
-
-.modal-content h2 span {
-    color: #ff2020;
-}
-
-/* ============================= */
-/* CLOSE BUTTON */
-/* ============================= */
-
-.close {
-    position: absolute;
-
-    top: 8px;
-
-    right: 10px;
-
-    width: 30px;
-
-    height: 30px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    background: transparent;
-
-    border: none;
-
-    color: #aaa;
-
-    font-size: 24px;
-
-    cursor: pointer;
-
-    border-radius: 6px;
-
-    transition: 0.2s;
-}
-
-.close:hover {
-    color: white;
-
-    background: #1b0d0d;
-}
-
-/* ============================= */
-/* SELECTED RANK */
-/* ============================= */
-
-.selected-rank {
-    display: flex;
-
-    justify-content: space-between;
-
-    align-items: center;
-
-    padding: 10px 12px;
-
-    margin-bottom: 13px;
-
-    background: #150909;
-
-    border-radius: 7px;
-
-    border: 1px solid #402020;
-}
-
-.selected-rank strong {
-    color: #ff2020;
-
-    font-size: 17px;
-}
-
-.selected-rank span {
-    font-weight: bold;
-
-    font-size: 14px;
-}
-
-/* ============================= */
-/* BANK */
-/* ============================= */
-
-.bank-box {
-    background: #100909;
-
-    border: 1px solid #3d2020;
-
-    border-radius: 8px;
-
-    padding: 12px;
-
-    margin-bottom: 15px;
-}
-
-.bank-box h3 {
-    margin-bottom: 6px;
-
-    font-size: 15px;
-}
-
-.bank-box p {
-    color: #888;
-
-    font-size: 11px;
-
-    margin-bottom: 10px;
-}
-
-.bank-detail {
-    display: flex;
-
-    justify-content: space-between;
-
-    align-items: center;
-
-    padding: 6px 0;
-
-    border-bottom: 1px solid #302020;
-
-    gap: 12px;
-
-    font-size: 12px;
-}
-
-.bank-detail:last-child {
-    border-bottom: none;
-}
-
-.bank-detail span {
-    color: #888;
-}
-
-.bank-detail strong {
-    text-align: right;
-
-    word-break: break-word;
-}
-
-/* ============================= */
-/* FORM */
-/* ============================= */
-
-form label {
-    display: block;
-
-    margin: 9px 0 4px;
-
-    font-size: 12px;
-
-    font-weight: bold;
-}
-
-form input {
-    width: 100%;
-
-    padding: 9px;
-
-    background: #080707;
-
-    border: 1px solid #303030;
-
-    border-radius: 6px;
-
-    color: white;
-
-    outline: none;
-
-    font-size: 12px;
-}
-
-form input:focus {
-    border-color: #ff2020;
-
-    box-shadow: 0 0 8px rgba(255, 0, 0, 0.1);
-}
-
-input[type="file"] {
-    padding: 7px;
-}
-
-/* ============================= */
-/* SEND BUTTON */
-/* ============================= */
-
-.send-btn {
-    width: 100%;
-
-    margin-top: 15px;
-
-    padding: 11px;
-
-    background: #e60000;
-
-    color: #ffffff;
-
-    border-radius: 7px;
-
-    font-size: 13px;
-}
-
-.send-btn:hover {
-    background: #ff2020;
-
-    box-shadow: 0 0 25px rgba(255, 0, 0, 0.4);
-
-    transform: translateY(-1px);
-}
-
-/* ============================= */
-/* NOTICE */
-/* ============================= */
-
-.notice {
-    color: #888;
-
-    font-size: 10px;
-
-    margin-top: 10px;
-
-    text-align: center;
-}
-
-/* ============================= */
-/* FOOTER */
-/* ============================= */
-
-footer {
-    padding: 45px 20px;
-
-    text-align: center;
-
-    background: #050505;
-
-    border-top: 1px solid #351515;
-}
-
-/* FOOTER LOGO */
-
-footer .logo {
-    justify-content: center;
-}
-
-footer .logo img {
-    width: 45px !important;
-    height: 45px !important;
-
-    min-width: 45px !important;
-    min-height: 45px !important;
-
-    max-width: 45px !important;
-    max-height: 45px !important;
-
-    display: block !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-
-    object-fit: contain !important;
-}
-
-footer p {
-    color: #777;
-
-    margin-top: 10px;
-
-    font-size: 13px;
-}
-
-/* ============================= */
-/* TABLET */
-/* ============================= */
-
-@media (max-width: 900px) {
-
-    .rank-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .steps {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .nav-links {
-        display: none;
-    }
-}
-
-/* ============================= */
-/* MOBILE */
-/* ============================= */
-
-@media (max-width: 600px) {
-
-    .navbar {
-        padding: 14px 15px;
-    }
-
-    .logo {
-        font-size: 20px;
-        gap: 8px;
-    }
-
-    .logo img {
-        width: 38px !important;
-        height: 38px !important;
-
-        min-width: 38px !important;
-        min-height: 38px !important;
-
-        max-width: 38px !important;
-        max-height: 38px !important;
-    }
-
-    .rank-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .steps {
-        grid-template-columns: 1fr;
-    }
-
-    .hero h1 {
-        letter-spacing: -2px;
-    }
-
-    .server-box strong {
-        display: block;
-
-        margin-bottom: 12px;
-    }
-
-    /* CONTACT MOBILE */
-    .contact-section {
-        padding: 70px 15px;
-    }
-
-    .contact-heading h2 {
-        font-size: 32px;
-    }
-
-    .contact-heading p {
-        font-size: 14px;
-    }
-
-    .contact-cards {
-        grid-template-columns: 1fr;
-    }
-
-    .contact-card {
-        padding: 20px;
-        gap: 15px;
-    }
-
-    .contact-icon {
-        min-width: 52px;
-        width: 52px;
-        height: 52px;
-        font-size: 22px;
-    }
-
-    .contact-info h3 {
-        font-size: 16px;
-    }
-
-    .contact-info p {
-        font-size: 14px;
-    }
-
-    .contact-info span {
-        font-size: 13px;
-    }
-
-    .modal {
-        padding: 8px;
-    }
-
-    .modal-content {
-        width: 100%;
-
-        max-width: 350px;
-
-        max-height: 92vh;
-
-        padding: 18px 14px;
-
-        border-radius: 10px;
-    }
-
-    .modal-content h2 {
-        font-size: 20px;
-
-        margin-bottom: 12px;
-    }
-
-    .selected-rank {
-        padding: 9px 10px;
-    }
-
-    .selected-rank strong {
-        font-size: 16px;
-    }
-
-    .selected-rank span {
-        font-size: 13px;
-    }
-
-    .bank-box {
-        padding: 10px;
-
-        margin-bottom: 13px;
-    }
-
-    .bank-detail {
-        font-size: 11px;
-
-        padding: 5px 0;
-    }
-
-    form label {
-        font-size: 11px;
-
-        margin-top: 8px;
-    }
-
-    form input {
-        padding: 8px;
-
-        font-size: 11px;
-    }
-
-    .send-btn {
-        padding: 10px;
-
-        margin-top: 13px;
-
-        font-size: 12px;
-    }
-
-}
-
-/* ============================= */
-/* MOBILE HAMBURGER NAVIGATION */
-/* ============================= */
-
-.menu-toggle {
-    display: none;
-    background: transparent;
-    border: none;
-    color: #ffffff;
-    font-size: 28px;
-    cursor: pointer;
-    padding: 5px;
-}
-
-@media (max-width: 900px) {
-
-    .navbar {
-        position: relative;
-    }
-
-    .menu-toggle {
-        display: block;
-    }
-
-    .nav-links {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-
-        flex-direction: column;
-        gap: 0;
-
-        background: #070707;
-        border-top: 1px solid #301010;
-    }
-
-    .nav-links.active {
-        display: flex;
-    }
-
-    .nav-links a {
-        width: 100%;
-        padding: 18px 25px;
-        border-bottom: 1px solid #301010;
-    }
-
-}
