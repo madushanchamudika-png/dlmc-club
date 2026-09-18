@@ -2,36 +2,62 @@ require("dotenv").config();
 
 const express = require("express");
 const multer = require("multer");
+const path = require("path");
+const fs = require("fs");
 const axios = require("axios");
 const FormData = require("form-data");
-const fs = require("fs");
-const path = require("path");
 
 const app = express();
-
 const PORT = process.env.PORT || 3000;
 
+// ========================================
+// TELEGRAM
+// ========================================
+
 const BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN;
-const CHAT_ID = process.env.TELEGRAM_CHAT_ID;
 
-// Payment screenshot upload
-const upload = multer({
-    dest: "uploads/"
-});
+// DLMC CLUB PAYMENTS GROUP
+const CHAT_ID = "-5384139242";
 
-// Serve website
+// ========================================
+// MIDDLEWARE
+// ========================================
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 app.use(express.static(__dirname));
 
-// Test route
+// ========================================
+// UPLOAD
+// ========================================
+
+const uploadDir = path.join(__dirname, "uploads");
+
+if (!fs.existsSync(uploadDir)) {
+    fs.mkdirSync(uploadDir, { recursive: true });
+}
+
+const upload = multer({
+    dest: uploadDir
+});
+
+// ========================================
+// TEST
+// ========================================
+
 app.get("/test", (req, res) => {
     res.send("DLMC CLUB SERVER IS WORKING!");
 });
+// ========================================
+// RANK REQUEST
+// ========================================
 
-// Receive rank request
 app.post(
     "/request-rank",
     upload.single("paymentScreenshot"),
     async (req, res) => {
+
+        let filePath = null;
 
         try {
 
@@ -42,25 +68,54 @@ app.post(
                 price
             } = req.body;
 
-            console.log("==============================");
-            console.log("NEW RANK REQUEST");
-            console.log("Username:", minecraftUsername);
-            console.log("Rank:", rank);
-            console.log("Price:", price);
-            console.log("Reference:", transferReference);
-            console.log("==============================");
+            filePath = req.file?.path || null;
 
-            // Check Telegram settings
-            if (!BOT_TOKEN || !CHAT_ID) {
-                console.error("❌ Telegram environment variables missing!");
+            // Check request data
+            if (
+                !minecraftUsername ||
+                !transferReference ||
+                !rank ||
+                !price ||
+                !req.file
+            ) {
+                if (filePath) {
+                    fs.unlink(filePath, () => {});
+                }
 
-                return res.status(500).json({
+                return res.status(400).json({
                     success: false,
-                    message: "Telegram configuration missing."
+                    message: "Missing request details."
                 });
             }
 
-            // Telegram message
+            // Check Telegram token
+            if (!BOT_TOKEN) {
+
+                if (filePath) {
+                    fs.unlink(filePath, () => {});
+                }
+
+                return res.status(500).json({
+                    success: false,
+                    message: "TELEGRAM_BOT_TOKEN is missing."
+                });
+            }
+
+            console.log("");
+            console.log("================================");
+            console.log("🛒 NEW DLMC RANK REQUEST");
+            console.log("================================");
+            console.log("Minecraft:", minecraftUsername);
+            console.log("Rank:", rank);
+            console.log("Price:", price);
+            console.log("Reference:", transferReference);
+            console.log("Telegram Group:", CHAT_ID);
+            console.log("================================");
+
+            // ========================================
+            // TELEGRAM MESSAGE
+            // ========================================
+
             const message =
 `🛒 NEW DLMC CLUB RANK REQUEST
 
@@ -77,10 +132,14 @@ Rs. ${price}
 ${transferReference}
 
 📸 Payment Screenshot:
-Attached below.`;
+Attached below.
 
-            // Send message to Telegram
-            await axios.post(
+━━━━━━━━━━━━━━━━━━
+🤖 DLMC CLUB WEB STORE`;
+
+            console.log("📤 Sending message to Telegram...");
+
+            const telegramMessage = await axios.post(
                 `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`,
                 {
                     chat_id: CHAT_ID,
@@ -89,71 +148,127 @@ Attached below.`;
             );
 
             console.log("✅ Telegram message sent!");
+            console.log(telegramMessage.data);
 
-            // Send screenshot
-            if (req.file) {
+            // ========================================
+            // PAYMENT SCREENSHOT
+            // ========================================
 
-                const form = new FormData();
+            console.log("📤 Sending payment screenshot...");
 
-                form.append("chat_id", CHAT_ID);
-                form.append(
-                    "photo",
-                    fs.createReadStream(req.file.path)
-                );
+            const photoForm = new FormData();
 
-                form.append(
-                    "caption",
-                    `💳 Payment Screenshot\n👤 ${minecraftUsername}\n🏆 ${rank}`
-                );
+            photoForm.append(
+                "chat_id",
+                CHAT_ID
+            );
 
-                await axios.post(
-                    `https://api.telegram.org/bot${BOT_TOKEN}/sendPhoto`,
-                    form,
-                    {
-                        headers: form.getHeaders()
-                    }
-                );
+            photoForm.append(
+                "photo",
+                fs.createReadStream(filePath)
+            );
 
-                console.log("✅ Payment screenshot sent!");
+            photoForm.append(
+                "caption",
+`💳 PAYMENT SCREENSHOT
+
+👤 Username:
+${minecraftUsername}
+
+🏆 Rank:
+${rank}
+
+💰 Price:
+Rs. ${price}
+
+🧾 Reference:
+${transferReference}
+
+━━━━━━━━━━━━━━━━━━
+🤖 DLMC CLUB WEB STORE`
+            );
+
+            const telegramPhoto = await axios.post(
+                `https://api.telegram.org/bot${BOT_TOKEN}/sendPhoto`,
+                photoForm,
+                {
+                    headers: photoForm.getHeaders()
+                }
+            );
+
+            console.log("✅ Screenshot sent!");
+            console.log(telegramPhoto.data);
+
+            // ========================================
+            // DELETE TEMP FILE
+            // ========================================
+
+            if (filePath) {
+                fs.unlink(filePath, () => {});
             }
 
-            // Delete uploaded file
-            if (req.file) {
-                fs.unlink(req.file.path, (err) => {
-                    if (err) {
-                        console.log("Could not delete temporary file.");
-                    }
-                });
-            }
+            // ========================================
+            // SUCCESS
+            // ========================================
 
-            res.json({
+            console.log("================================");
+            console.log("✅ TELEGRAM REQUEST SENT");
+            console.log("================================");
+
+            return res.json({
                 success: true,
-                message: "Request sent successfully!"
+                message: "Request sent to Telegram!"
             });
 
         } catch (error) {
 
-            console.error("❌ TELEGRAM ERROR:");
+            console.log("");
+            console.log("================================");
+            console.log("❌ TELEGRAM ERROR");
+            console.log("================================");
 
-            if (error.response) {
-                console.error(error.response.data);
-            } else {
-                console.error(error.message);
+            console.log(
+                "Message:",
+                error.message
+            );
+
+            console.log(
+                "Status:",
+                error.response?.status
+            );
+
+            console.log(
+                "Telegram Response:",
+                error.response?.data
+            );
+
+            console.log("================================");
+
+            if (filePath) {
+                fs.unlink(filePath, () => {});
             }
 
-            res.status(500).json({
+            return res.status(500).json({
                 success: false,
-                message: "Failed to send request to Telegram."
+                message: "Could not send request to Telegram."
             });
         }
     }
 );
 
+// ========================================
+// START SERVER
+// ========================================
+
 app.listen(PORT, () => {
+
+    console.log("");
     console.log("================================");
     console.log("       DLMC CLUB SERVER");
     console.log("================================");
-    console.log(`Server running on port ${PORT}`);
+    console.log(`Website: http://localhost:${PORT}`);
+    console.log("Server is running!");
     console.log("Telegram Chat ID:", CHAT_ID);
     console.log("================================");
+
 });
