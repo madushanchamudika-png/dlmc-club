@@ -2,7 +2,7 @@
 {
   "name": "dlmc-club",
   "version": "1.0.0",
-  "description": "",
+  "description": "DLMC CLUB Minecraft Rank Request Server",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
