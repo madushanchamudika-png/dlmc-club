@@ -57,14 +57,17 @@ header {
 }
 
 
-/* MAIN LOGO IMAGE */
+/* LOGO IMAGE */
 
 .logo img {
     width: 45px !important;
     height: 45px !important;
 
-    min-width: 45px;
-    min-height: 45px;
+    min-width: 45px !important;
+    min-height: 45px !important;
+
+    max-width: 45px !important;
+    max-height: 45px !important;
 
     display: block !important;
     visibility: visible !important;
@@ -72,9 +75,9 @@ header {
 
     object-fit: contain !important;
 
-    flex-shrink: 0;
+    flex-shrink: 0 !important;
 
-    border: none;
+    border: none !important;
 }
 
 /* LOGO TEXT */
@@ -840,7 +843,7 @@ footer {
     border-top: 1px solid #351515;
 }
 
-/* Footer Logo */
+/* FOOTER LOGO */
 
 footer .logo {
     justify-content: center;
@@ -849,6 +852,12 @@ footer .logo {
 footer .logo img {
     width: 45px !important;
     height: 45px !important;
+
+    min-width: 45px !important;
+    min-height: 45px !important;
+
+    max-width: 45px !important;
+    max-height: 45px !important;
 
     display: block !important;
     visibility: visible !important;
@@ -903,8 +912,11 @@ footer p {
         width: 38px !important;
         height: 38px !important;
 
-        min-width: 38px;
-        min-height: 38px;
+        min-width: 38px !important;
+        min-height: 38px !important;
+
+        max-width: 38px !important;
+        max-height: 38px !important;
     }
 
     .rank-grid {
@@ -990,4 +1002,5 @@ footer p {
 
         font-size: 12px;
     }
+
 }
