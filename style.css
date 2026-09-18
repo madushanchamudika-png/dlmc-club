@@ -55,6 +55,11 @@ header {
 
     white-space: nowrap;
 }
+.logo {
+    width: 170px;
+    height: auto;
+    display: block;
+}
 
 /* MAIN LOGO IMAGE */
 
