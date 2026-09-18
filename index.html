@@ -1,350 +1,382 @@
-<!DOCTYPE html> 
+```html
+<!DOCTYPE html>  
+  
+<html lang="en">  
+  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+  
+    <title>DLMC CLUB | Rank Store</title>  
+    <link rel="icon" type="image/png" sizes="32x32" href="dlmc-favicon.png">  
+  
+    <title>DLMC CLUB</title>  
+  
+    <link rel="stylesheet" href="style.css">  
+</head>  
+  
+<body>  
+  
+<!-- ============================= -->  
+<!-- NAVBAR -->  
+<!-- ============================= -->  
+  
+<header>  
+    <nav class="navbar">  
+  
+        <!-- DLMC CLUB LOGO -->  
+        <a href="#home" class="logo">  
+            <img src="/dlmc-favicon.png" alt="DLMC CLUB Logo">  
+            <span><b>DLMC</b> CLUB</span>  
+        </a>  
+  
+        <div class="nav-links">  
+            <a href="#home">Home</a>  
+            <a href="#ranks">Ranks</a>  
+            <a href="#how">How It Works</a>  
+            <a href="#faq">FAQ</a>  
+        </div>  
+  
+        <a href="#ranks" class="store-btn">  
+            REQUEST RANK  
+        </a>  
+  
+    </nav>  
+</header>  
+  
+<!-- HERO -->  
+  
+<section id="home" class="hero">  
+    <div class="hero-content">  
+        <div class="badge">🇱🇰 MADE IN SRI LANKA</div>  
+        <h1>DLMC <span>CLUB</span></h1>  
+        <p>Upgrade your Minecraft experience. Choose your rank and send a purchase request.</p>  
+        <div class="server-box">  
+            <span>SERVER IP</span>  
+            <strong id="serverIP">play.dlmc.club</strong>  
+            <button onclick="copyIP()">COPY IP</button>  
+        </div>  
+        <a href="#ranks" class="main-btn">VIEW RANKS</a>  
+    </div>  
+</section>  
+  
+<!-- RANKS -->  
+  
+<section id="ranks" class="section">  
+    <div class="section-title">  
+        <span>STORE</span>  
+        <h2>CHOOSE YOUR RANK</h2>  
+        <p>Pay directly to our bank account and send us your payment request.</p>  
+    </div>  
  
-<html lang="en"> 
+    <div class="rank-grid">  
  
-<head> 
-    <meta charset="UTF-8"> 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <div class="rank-card squire">  
+            <div class="rank-name">SQUIRE</div>  
+            <div class="price">Rs. 75</div>  
+            <p>Basic supporter rank</p>  
+            <button onclick="openRequest('SQUIRE', 75)">REQUEST RANK</button>  
+        </div>  
  
-    <title>DLMC CLUB | Rank Store</title> 
-    <link rel="icon" type="image/png" sizes="32x32" href="dlmc-favicon.png"> 
+        <div class="rank-card knight">  
+            <div class="rank-name">KNIGHT</div>  
+            <div class="price">Rs. 200</div>  
+            <p>Knight supporter rank</p>  
+            <button onclick="openRequest('KNIGHT', 200)">REQUEST RANK</button>  
+        </div>  
  
-    <title>DLMC CLUB</title> 
+        <div class="rank-card warrior">  
+            <div class="rank-name">WARRIOR</div>  
+            <div class="price">Rs. 300</div>  
+            <p>Warrior supporter rank</p>  
+            <button onclick="openRequest('WARRIOR', 300)">REQUEST RANK</button>  
+        </div>  
  
-    <link rel="stylesheet" href="style.css"> 
-</head> 
+        <div class="rank-card legend">  
+            <div class="rank-name">LEGEND</div>  
+            <div class="price">Rs. 500</div>  
+            <p>Premium legend rank</p>  
+            <button onclick="openRequest('LEGEND', 500)">REQUEST RANK</button>  
+        </div>  
  
-<body> 
+        <div class="rank-card overload">  
+            <div class="rank-name">OVERLOAD</div>  
+            <div class="price">Rs. 750</div>  
+            <p>Ultimate supporter rank</p>  
+            <button onclick="openRequest('OVERLOAD', 750)">REQUEST RANK</button>  
+        </div>  
+ 
+    </div>  
+</section>  
+  
+<!-- HOW IT WORKS -->  
+  
+<section id="how" class="section dark">  
+    <div class="section-title">  
+        <span>PROCESS</span>  
+        <h2>HOW IT WORKS</h2>  
+    </div>  
+ 
+    <div class="steps">  
+        <div class="step"> 
+            <strong>01</strong> 
+            <h3>Choose Rank</h3> 
+            <p>Select the rank you want.</p> 
+        </div>  
+ 
+        <div class="step"> 
+            <strong>02</strong> 
+            <h3>Make Payment</h3> 
+            <p>Transfer the exact amount to our bank account.</p> 
+        </div>  
+ 
+        <div class="step"> 
+            <strong>03</strong> 
+            <h3>Send Request</h3> 
+            <p>Submit your Minecraft username and payment details.</p> 
+        </div>  
+ 
+        <div class="step"> 
+            <strong>04</strong> 
+            <h3>Receive Rank</h3> 
+            <p>We verify your payment and add your rank.</p> 
+        </div>  
+    </div>  
+</section>  
+  
+<!-- FAQ -->  
+  
+<section id="faq" class="section">  
+    <div class="section-title">  
+        <span>HELP</span>  
+        <h2>FAQ</h2>  
+    </div>  
+ 
+    <div class="faq">  
+        <details>  
+            <summary>How long does it take?</summary>  
+            <p>After we verify your payment, your rank will be added manually.</p>  
+        </details>  
+ 
+        <details>  
+            <summary>Do I need a Minecraft username?</summary>  
+            <p>Yes. Enter the exact Minecraft username that should receive the rank.</p>  
+        </details>  
+ 
+        <details>  
+            <summary>Can I request a refund?</summary>  
+            <p>Contact the DLMC CLUB staff before making another payment.</p>  
+        </details>  
+    </div>  
+</section>  
+ 
  
 <!-- ============================= --> 
-<!-- NAVBAR --> 
+<!-- CONTACT US --> 
 <!-- ============================= --> 
  
-<header> 
-    <nav class="navbar"> 
+<section class="contact-section" id="contact"> 
  
-        <!-- DLMC CLUB LOGO --> 
-        <a href="#home" class="logo"> 
-            <img src="/dlmc-favicon.png" alt="DLMC CLUB Logo"> 
-            <span><b>DLMC</b> CLUB</span> 
-        </a> 
+    <div class="contact-container"> 
  
-        <div class="nav-links"> 
-            <a href="#home">Home</a> 
-            <a href="#ranks">Ranks</a> 
-            <a href="#how">How It Works</a> 
-            <a href="#faq">FAQ</a> 
+        <div class="contact-heading"> 
+ 
+            <span>GET IN TOUCH</span> 
+ 
+            <h2> 
+                Contact <strong>Us</strong> 
+            </h2> 
+ 
+            <p> 
+                Have a question or need help? 
+                Contact us using email or phone. 
+            </p> 
+ 
         </div> 
  
-        <a href="#ranks" class="store-btn"> 
-            REQUEST RANK 
-        </a> 
+        <div class="contact-cards"> 
  
-    </nav> 
-</header> 
+            <!-- LAKSHAN EMAIL --> 
+            <a href="mailto:lakshanyt.lk@gmail.com" class="contact-card"> 
+                <div class="contact-icon">✉</div> 
  
-<!-- HERO --> 
+                <div class="contact-info"> 
+                    <h3>Email</h3> 
+                    <p>Lakshan</p> 
+                    <span>lakshanyt.lk@gmail.com</span> 
+                </div> 
+            </a> 
  
-<section id="home" class="hero"> 
-    <div class="hero-content"> 
-        <div class="badge">🇱🇰 MADE IN SRI LANKA</div> 
-        <h1>DLMC <span>CLUB</span></h1> 
-        <p>Upgrade your Minecraft experience. Choose your rank and send a purchase request.</p> 
-        <div class="server-box"> 
-            <span>SERVER IP</span> 
-            <strong id="serverIP">play.dlmc.club</strong> 
-            <button onclick="copyIP()">COPY IP</button> 
+ 
+            <!-- LAKSHAN PHONE --> 
+            <a href="tel:0742420362" class="contact-card"> 
+                <div class="contact-icon">☎</div> 
+ 
+                <div class="contact-info"> 
+                    <h3>Phone</h3> 
+                    <p>Lakshan</p> 
+                    <span>0742420362</span> 
+                </div> 
+            </a> 
+ 
+ 
+            <!-- LUNA EMAIL --> 
+            <a href="mailto:chamudikabandara19@gmail.com" class="contact-card"> 
+                <div class="contact-icon">✉</div> 
+ 
+                <div class="contact-info"> 
+                    <h3>Email</h3> 
+                    <p>LuNa</p> 
+                    <span>chamudikabandara19@gmail.com</span> 
+                </div> 
+            </a> 
+ 
+ 
+            <!-- LUNA PHONE --> 
+            <a href="tel:0762596186" class="contact-card"> 
+                <div class="contact-icon">☎</div> 
+ 
+                <div class="contact-info"> 
+                    <h3>Phone</h3> 
+                    <p>LuNa</p> 
+                    <span>0762596186</span> 
+                </div> 
+            </a> 
+ 
         </div> 
-        <a href="#ranks" class="main-btn">VIEW RANKS</a> 
+ 
     </div> 
-</section> 
  
-<!-- RANKS --> 
- 
-<section id="ranks" class="section"> 
-    <div class="section-title"> 
-        <span>STORE</span> 
-        <h2>CHOOSE YOUR RANK</h2> 
-        <p>Pay directly to our bank account and send us your payment request.</p> 
-    </div> 
-
-    <div class="rank-grid"> 
-
-        <div class="rank-card squire"> 
-            <div class="rank-name">SQUIRE</div> 
-            <div class="price">Rs. 75</div> 
-            <p>Basic supporter rank</p> 
-            <button onclick="openRequest('SQUIRE', 75)">REQUEST RANK</button> 
-        </div> 
-
-        <div class="rank-card knight"> 
-            <div class="rank-name">KNIGHT</div> 
-            <div class="price">Rs. 200</div> 
-            <p>Knight supporter rank</p> 
-            <button onclick="openRequest('KNIGHT', 200)">REQUEST RANK</button> 
-        </div> 
-
-        <div class="rank-card warrior"> 
-            <div class="rank-name">WARRIOR</div> 
-            <div class="price">Rs. 300</div> 
-            <p>Warrior supporter rank</p> 
-            <button onclick="openRequest('WARRIOR', 300)">REQUEST RANK</button> 
-        </div> 
-
-        <div class="rank-card legend"> 
-            <div class="rank-name">LEGEND</div> 
-            <div class="price">Rs. 500</div> 
-            <p>Premium legend rank</p> 
-            <button onclick="openRequest('LEGEND', 500)">REQUEST RANK</button> 
-        </div> 
-
-        <div class="rank-card overload"> 
-            <div class="rank-name">OVERLOAD</div> 
-            <div class="price">Rs. 750</div> 
-            <p>Ultimate supporter rank</p> 
-            <button onclick="openRequest('OVERLOAD', 750)">REQUEST RANK</button> 
-        </div> 
-
-    </div> 
-</section> 
- 
-<!-- HOW IT WORKS --> 
- 
-<section id="how" class="section dark"> 
-    <div class="section-title"> 
-        <span>PROCESS</span> 
-        <h2>HOW IT WORKS</h2> 
-    </div> 
-
-    <div class="steps"> 
-        <div class="step">
-            <strong>01</strong>
-            <h3>Choose Rank</h3>
-            <p>Select the rank you want.</p>
-        </div> 
-
-        <div class="step">
-            <strong>02</strong>
-            <h3>Make Payment</h3>
-            <p>Transfer the exact amount to our bank account.</p>
-        </div> 
-
-        <div class="step">
-            <strong>03</strong>
-            <h3>Send Request</h3>
-            <p>Submit your Minecraft username and payment details.</p>
-        </div> 
-
-        <div class="step">
-            <strong>04</strong>
-            <h3>Receive Rank</h3>
-            <p>We verify your payment and add your rank.</p>
-        </div> 
-    </div> 
-</section> 
- 
-<!-- FAQ --> 
- 
-<section id="faq" class="section"> 
-    <div class="section-title"> 
-        <span>HELP</span> 
-        <h2>FAQ</h2> 
-    </div> 
-
-    <div class="faq"> 
-        <details> 
-            <summary>How long does it take?</summary> 
-            <p>After we verify your payment, your rank will be added manually.</p> 
-        </details> 
-
-        <details> 
-            <summary>Do I need a Minecraft username?</summary> 
-            <p>Yes. Enter the exact Minecraft username that should receive the rank.</p> 
-        </details> 
-
-        <details> 
-            <summary>Can I request a refund?</summary> 
-            <p>Contact the DLMC CLUB staff before making another payment.</p> 
-        </details> 
-    </div> 
 </section> 
 
 
 <!-- ============================= -->
-<!-- CONTACT US -->
+<!-- DISCORD SUPPORT -->
 <!-- ============================= -->
 
-<section class="contact-section" id="contact">
+<section class="discord-section">
 
-    <div class="contact-container">
+    <div class="discord-container">
 
-        <div class="contact-heading">
+        <div class="discord-icon">
+            💬
+        </div>
 
-            <span>GET IN TOUCH</span>
-
-            <h2>
-                Contact <strong>Us</strong>
-            </h2>
-
+        <div class="discord-content">
+            <span>COMMUNITY SUPPORT</span>
+            <h2>Discord Support</h2>
             <p>
-                Have a question or need help?
-                Contact us using email or phone.
+                Need help or want to join our community?
+                Join the DLMC CLUB Discord server.
             </p>
-
         </div>
 
-        <div class="contact-cards">
-
-            <!-- LAKSHAN EMAIL -->
-            <a href="mailto:lakshanyt.lk@gmail.com" class="contact-card">
-                <div class="contact-icon">✉</div>
-
-                <div class="contact-info">
-                    <h3>Email</h3>
-                    <p>Lakshan</p>
-                    <span>lakshanyt.lk@gmail.com</span>
-                </div>
-            </a>
-
-
-            <!-- LAKSHAN PHONE -->
-            <a href="tel:0742420362" class="contact-card">
-                <div class="contact-icon">☎</div>
-
-                <div class="contact-info">
-                    <h3>Phone</h3>
-                    <p>Lakshan</p>
-                    <span>0742420362</span>
-                </div>
-            </a>
-
-
-            <!-- LUNA EMAIL -->
-            <a href="mailto:chamudikabandara19@gmail.com" class="contact-card">
-                <div class="contact-icon">✉</div>
-
-                <div class="contact-info">
-                    <h3>Email</h3>
-                    <p>LuNa</p>
-                    <span>chamudikabandara19@gmail.com</span>
-                </div>
-            </a>
-
-
-            <!-- LUNA PHONE -->
-            <a href="tel:0762596186" class="contact-card">
-                <div class="contact-icon">☎</div>
-
-                <div class="contact-info">
-                    <h3>Phone</h3>
-                    <p>LuNa</p>
-                    <span>0762596186</span>
-                </div>
-            </a>
-
-        </div>
+        <a href="https://discord.gg/nxfDGTXqHm" target="_blank" class="discord-btn">
+            JOIN DISCORD
+        </a>
 
     </div>
 
 </section>
-
-
-<!-- REQUEST MODAL --> 
  
-<div id="requestModal" class="modal"> 
-    <div class="modal-content"> 
-
-        <button class="close" onclick="closeRequest()">×</button> 
-
-        <h2>REQUEST <span>RANK</span></h2> 
-
-        <div class="selected-rank"> 
-            <strong id="selectedRank">SQUIRE</strong> 
-            <span id="selectedPrice">Rs. 75</span> 
-        </div> 
-
-        <div class="bank-box"> 
-            <h3>💳 BANK PAYMENT</h3> 
-            <p>Please transfer the exact amount to our bank account.</p> 
-
-            <div class="bank-detail">
-                <span>Bank</span>
-                <strong>BOC</strong>
-            </div> 
-
-            <div class="bank-detail">
-                <span>Account Name</span>
-                <strong>A M C M Bandara</strong>
-            </div> 
-
-            <div class="bank-detail">
-                <span>ACCOUNT NUMBER</span>
-                <strong>95929618</strong>
-            </div> 
-
-            <div class="bank-detail">
-                <span>Branch</span>
-                <strong>Ankumbura</strong>
-            </div> 
-        </div> 
-
-        <form id="requestForm"> 
-
-            <label>Minecraft Username</label> 
-            <input 
-                type="text" 
-                id="minecraftUsername" 
-                placeholder="Example: Luna" 
-                required
-            > 
-
-            <label>Transfer Reference</label> 
-            <input 
-                type="text" 
-                id="transferReference" 
-                placeholder="Bank transfer reference" 
-                required
-            > 
-
-            <label>Payment Screenshot</label> 
-            <input 
-                type="file" 
-                id="paymentScreenshot" 
-                accept="image/*" 
-                required
-            > 
-
-            <button type="submit" class="send-btn">
-                SEND REQUEST
-            </button> 
-
-        </form> 
-
-        <p class="notice">
-            ⚠️ Your rank will be added after payment verification.
-        </p> 
-
-    </div> 
-</div> 
  
-<!-- FOOTER --> 
+<!-- REQUEST MODAL -->  
+  
+<div id="requestModal" class="modal">  
+    <div class="modal-content">  
  
-<footer> 
-
-    <a href="#home" class="logo"> 
-        <img 
-            src="dlmc-favicon.png" 
-            alt="DLMC CLUB Logo" 
-            style="width:45px;height:45px;display:block;object-fit:contain;"
-        > 
-        <span><b>DLMC</b> CLUB</span> 
-    </a> 
-
-    <p>Made in Sri Lanka 🇱🇰</p> 
-    <p>© 2026 DLMC CLUB. All rights reserved.</p> 
-
-</footer> 
+        <button class="close" onclick="closeRequest()">×</button>  
  
-<script src="script.js"></script> 
-</body> 
+        <h2>REQUEST <span>RANK</span></h2>  
+ 
+        <div class="selected-rank">  
+            <strong id="selectedRank">SQUIRE</strong>  
+            <span id="selectedPrice">Rs. 75</span>  
+        </div>  
+ 
+        <div class="bank-box">  
+            <h3>💳 BANK PAYMENT</h3>  
+            <p>Please transfer the exact amount to our bank account.</p>  
+ 
+            <div class="bank-detail"> 
+                <span>Bank</span> 
+                <strong>BOC</strong> 
+            </div>  
+ 
+            <div class="bank-detail"> 
+                <span>Account Name</span> 
+                <strong>A M C M Bandara</strong> 
+            </div>  
+ 
+            <div class="bank-detail"> 
+                <span>ACCOUNT NUMBER</span> 
+                <strong>95929618</strong> 
+            </div>  
+ 
+            <div class="bank-detail"> 
+                <span>Branch</span> 
+                <strong>Ankumbura</strong> 
+            </div>  
+        </div>  
+ 
+        <form id="requestForm">  
+ 
+            <label>Minecraft Username</label>  
+            <input  
+                type="text"  
+                id="minecraftUsername"  
+                placeholder="Example: Luna"  
+                required 
+            >  
+ 
+            <label>Transfer Reference</label>  
+            <input  
+                type="text"  
+                id="transferReference"  
+                placeholder="Bank transfer reference"  
+                required 
+            >  
+ 
+            <label>Payment Screenshot</label>  
+            <input  
+                type="file"  
+                id="paymentScreenshot"  
+                accept="image/*"  
+                required 
+            >  
+ 
+            <button type="submit" class="send-btn"> 
+                SEND REQUEST 
+            </button>  
+ 
+        </form>  
+ 
+        <p class="notice"> 
+            ⚠️ Your rank will be added after payment verification. 
+        </p>  
+ 
+    </div>  
+</div>  
+  
+<!-- FOOTER -->  
+  
+<footer>  
+ 
+    <a href="#home" class="logo">  
+        <img  
+            src="dlmc-favicon.png"  
+            alt="DLMC CLUB Logo"  
+            style="width:45px;height:45px;display:block;object-fit:contain;" 
+        >  
+        <span><b>DLMC</b> CLUB</span>  
+    </a>  
+ 
+    <p>Made in Sri Lanka 🇱🇰</p>  
+    <p>© 2026 DLMC CLUB. All rights reserved.</p>  
+ 
+</footer>  
+  
+<script src="script.js"></script>  
+</body>  
 </html>
+```
